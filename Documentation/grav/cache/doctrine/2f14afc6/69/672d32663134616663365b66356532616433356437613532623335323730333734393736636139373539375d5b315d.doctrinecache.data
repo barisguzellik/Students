@@ -1,0 +1,11 @@
+1600974073
+a:2:{s:7:"content";s:181:"<h1>Student</h1>
+<h2>Documentation</h2>
+<h3>Content</h3>
+<ul>
+<li>Student.UI</li>
+<li>Student.BLL</li>
+<li>Student.COMMON</li>
+<li>Student.DAL</li>
+<li>Student.xUnit.TEST</li>
+</ul>";s:12:"content_meta";N;}

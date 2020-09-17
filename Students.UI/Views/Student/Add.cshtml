@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewData["Title"] = "Öğrenci Ekle";
+}
+@model Students.DAL.Student
+
+<div class="content">
+    <div class="page-header">
+        <div>
+            <h3>Öğrenci Ekle</h3>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="/dashboard">Anasayfa</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="/student">Öğrenci</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">Öğrenci Ekle</li>
+                </ol>
+            </nav>
+        </div>
+        <div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <form method="post" enctype="multipart/form-data">
+                <div class="card">
+                    <div class="card-body">
+                        <h6 class="card-title">Genel</h6>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Sınıf</label>
+                                    <select id="CLASSID" name="CLASSID" asp-for="CLASSID">
+
+                                        @foreach (var item in ViewData["Classes"] as List<dynamic>)
+                                        {
+                                            <option value="@item.CLASSID">@item.NAME</option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Kimlik Numarası</label>
+                                    <input name="IDENTITYNUMBER" asp-for="@Model.IDENTITYNUMBER" type="number" maxlength="11" min="11111111111" max="99999999999" class="form-control" required />
+                                </div>
+                                <div class="form-group">
+                                    <label>Adı</label>
+                                    <input name="FIRSTNAME" asp-for="@Model.FIRSTNAME" type="text" class="form-control" required />
+                                </div>
+                                <div class="form-group">
+                                    <label>Soyadı</label>
+                                    <input name="LASTNAME" asp-for="@Model.LASTNAME" type="text" class="form-control" required />
+                                </div>
+                                <div class="form-group">
+                                    <label>Numarası</label>
+                                    <input name="NUMBER" asp-for="@Model.NUMBER" type="number" value="0" class="form-control" required />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Durum</label>
+                                    <select name="STATUS" asp-for="@Model.STATUS" class="form-control">
+                                        <option value="0">Pasif</option>
+                                        <option value="1">Aktif</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-primary pull-right" value="KAYDET" />
+            </form>
+        </div>
+    </div>
+</div>
+<!-- ./ Content -->
+<script>
+    @Html.Raw(@ViewData["alert"])
+</script>
+<script>
+    $(document).ready(function () {
+        $('#CLASSID').select2();
+    });
+</script>

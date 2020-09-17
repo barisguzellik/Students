@@ -1,0 +1,28 @@
+.collectionpager{
+    width: 100%;
+    text-align: center;
+}
+.pagination {
+    display: block;
+    text-align: center;
+}
+.pagination>div>span{
+    padding: 10px;
+    background-color:  #bc4677;
+    color: #fff;
+}
+.pagination>div>span>a{
+    padding: 10px;
+    color: #fff;
+    font-weight: bold;
+}
+.pagination>div>span>a:hover{
+    color: #bc4677;
+    background-color: #fff;
+    font-weight: bold;
+}
+.pagination>div>span>b{
+    padding: 10px;
+    background-color:  #fff;
+    color: #bc4677;
+}

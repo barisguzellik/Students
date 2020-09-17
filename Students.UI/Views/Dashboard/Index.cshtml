@@ -1,0 +1,74 @@
+﻿@{
+    ViewData["Title"] = "Gösterge";
+}
+
+<div class="content">
+    <div class="page-header">
+        <div>
+            <h3>Gösterge</h3>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="/dashboard">Anasayfa</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">Gösterge</li>
+                </ol>
+            </nav>
+        </div>
+        <div></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-md-12">
+            <a href="/student">
+                <div class="card bg-secondary">
+                    <div class="card-body">
+                        <h6 class="card-title d-flex justify-content-between">
+                            Öğrenci
+                        </h6>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="font-size-35">@ViewData["StudentCount"]</div>
+                            <div class="icon-block icon-block-xl icon-block-floating icon-block-outline-white opacity-7">
+                                <i class="fa fa-users"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-12">
+            <a href="/lesson">
+                <div class="card bg-warning">
+                    <div class="card-body">
+                        <h6 class="card-title d-flex justify-content-between">
+                            Ders
+                        </h6>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="font-size-35">@ViewData["LessonCount"]</div>
+                            <div class="icon-block icon-block-xl icon-block-floating icon-block-outline-white opacity-7">
+                                <i class="fa fa-book"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-12">
+            <a href="/class">
+                <div class="card bg-danger">
+                    <div class="card-body">
+                        <h6 class="card-title d-flex justify-content-between">
+                            Sınıf
+                        </h6>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="font-size-35">@ViewData["ClassCount"]</div>
+                            <div class="icon-block icon-block-xl icon-block-floating icon-block-outline-white opacity-7">
+                                <i class="fa fa-list"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+

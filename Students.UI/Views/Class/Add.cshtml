@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewData["Title"] = "Sınıf Ekle";
+}
+@model Students.DAL.Class
+
+<div class="content">
+    <div class="page-header">
+        <div>
+            <h3>Sınıf Ekle</h3>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="/dashboard">Anasayfa</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="/class">Sınıf</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">Sınıf Ekle</li>
+                </ol>
+            </nav>
+        </div>
+        <div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <form method="post" enctype="multipart/form-data">
+                <div class="card">
+                    <div class="card-body">
+                        <h6 class="card-title">Genel</h6>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Kod</label>
+                                    <input name="CODE" asp-for="@Model.CODE" type="text" class="form-control" required />
+                                </div>
+                                <div class="form-group">
+                                    <label>Ad</label>
+                                    <input name="NAME" asp-for="@Model.NAME" type="text" class="form-control" required />
+                                </div>
+                                <div class="form-group">
+                                    <label>Sıra</label>
+                                    <input name="SORT" asp-for="@Model.SORT" type="number" value="0" class="form-control" required />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Durum</label>
+                                    <select name="STATUS" asp-for="@Model.STATUS" class="form-control">
+                                        <option value="0">Pasif</option>
+                                        <option value="1">Aktif</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-primary pull-right" value="KAYDET" />
+            </form>
+        </div>
+    </div>
+</div>
+<!-- ./ Content -->
+<script>
+    @Html.Raw(@ViewData["alert"])
+</script>
